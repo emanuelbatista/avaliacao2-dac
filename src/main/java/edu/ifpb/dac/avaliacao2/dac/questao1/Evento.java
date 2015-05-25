@@ -5,35 +5,27 @@
  */
 package edu.ifpb.dac.avaliacao2.dac.questao1;
 
-import java.util.List;
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 
 /**
  *
  * @author Pris
  */
 @Entity
-public class Ator {
+public class Evento implements Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long codigo;
     
     private String nome;
-    private String nacionalidade;
-    private String sexo;
-    
-    @ManyToMany
-    private List<Filme> filmes;
-    
-    @OneToOne
-    private Ator parRomantico;
-    
+    private String local;
+    private int ano;
+
     public long getCodigo() {
         return codigo;
     }
@@ -50,21 +42,20 @@ public class Ator {
         this.nome = nome;
     }
 
-    public String getNacionalidade() {
-        return nacionalidade;
+    public String getLocal() {
+        return local;
     }
 
-    public void setNacionalidade(String nacionalidade) {
-        this.nacionalidade = nacionalidade;
+    public void setLocal(String local) {
+        this.local = local;
     }
 
-    public String getSexo() {
-        return sexo;
+    public int getAno() {
+        return ano;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setAno(int ano) {
+        this.ano = ano;
     }
-    
     
 }
