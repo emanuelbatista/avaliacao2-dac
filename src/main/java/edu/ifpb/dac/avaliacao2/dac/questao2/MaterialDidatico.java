@@ -3,11 +3,13 @@ package edu.ifpb.dac.avaliacao2.dac.questao2;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.Lob;
 import javax.persistence.Temporal;
 
 /**
@@ -18,17 +20,24 @@ import javax.persistence.Temporal;
 @IdClass(MaterialDidaticoPK.class)
 public class MaterialDidatico implements Serializable {
     @Id
+    @Column(length = 45)
     private String origem;
     @Id
     private long codigo;
+    @Column(length = 155,nullable = false)
     private String titulo;
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Column(nullable = false)
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date dataCadastro;
+    @Lob
     private String descricao;
+    @Column(length = 55)
     private String autor;
     @Enumerated(EnumType.STRING)
+    @Column(length = 15)
     private TipoMaterialDidatico tipo;
     private boolean publico;
+    @Column(precision = 2,scale = 6)
     private double tamanho;
 
     public String getOrigem() {

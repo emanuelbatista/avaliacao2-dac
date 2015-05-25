@@ -20,7 +20,7 @@ import javax.persistence.Id;
 @Entity
 public class Funcionario implements Serializable {
     
-    public enum Tipo{
+    public enum Funcao{
         EMPREGADO, GERENTE
     }
     
@@ -34,7 +34,7 @@ public class Funcionario implements Serializable {
     private double salario;
     
     @Enumerated(EnumType.STRING)
-    private Tipo cargo = Tipo.EMPREGADO;
+    private Funcao cargo = Funcao.EMPREGADO;
 
     public long getCodigo() {
         return codigo;
@@ -76,11 +76,11 @@ public class Funcionario implements Serializable {
         this.salario = salario;
     }
 
-    public Tipo getCargo() {
+    public Funcao getCargo() {
         return cargo;
     }
 
-    public void setCargo(Tipo cargo) {
+    public void setCargo(Funcao cargo) {
         this.cargo = cargo;
     }
     
