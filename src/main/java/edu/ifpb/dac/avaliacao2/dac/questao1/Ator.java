@@ -5,6 +5,7 @@
  */
 package edu.ifpb.dac.avaliacao2.dac.questao1;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ import javax.persistence.OneToOne;
  * @author Pris
  */
 @Entity
-public class Ator {
+public class Ator implements Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
