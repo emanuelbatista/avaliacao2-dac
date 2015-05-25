@@ -7,10 +7,14 @@ package edu.ifpb.dac.avaliacao2.dac.questao4;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -24,7 +28,10 @@ public class Conserto implements Serializable{
     private long codigo;
     
     private double valor;
-    private LocalDate dia;
+    @Temporal(TemporalType.DATE)
+    private Date dia;
+    
+    @OneToOne
     private Funcionario funcionario;
 
     public long getCodigo() {
@@ -43,13 +50,6 @@ public class Conserto implements Serializable{
         this.valor = valor;
     }
 
-    public LocalDate getDia() {
-        return dia;
-    }
-
-    public void setDia(LocalDate dia) {
-        this.dia = dia;
-    }
 
     public Funcionario getFuncionario() {
         return funcionario;
