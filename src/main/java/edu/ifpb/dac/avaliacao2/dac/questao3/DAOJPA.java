@@ -5,7 +5,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 /**
- * @author job
+ * @author Emanuel Batista da Silva
+ * @param <T>
  */
 public class DAOJPA<T> implements DAO<T>{
     

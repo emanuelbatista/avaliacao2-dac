@@ -7,7 +7,7 @@ package edu.ifpb.dac.avaliacao2.dac.questao3;
 
 /**
  *
- * @author job
+ * @author Emanuel Batista da Silva Filho
  * @param <T>
  */
 public interface DAO<T> {
