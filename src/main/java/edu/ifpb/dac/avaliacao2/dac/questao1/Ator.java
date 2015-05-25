@@ -29,9 +29,6 @@ public class Ator implements Serializable {
     private String nacionalidade;
     private String sexo;
     
-    @ManyToMany
-    private List<Filme> filmes;
-    
     @OneToOne
     private Ator parRomantico;
     

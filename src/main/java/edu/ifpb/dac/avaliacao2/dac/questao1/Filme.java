@@ -1,6 +1,7 @@
 
 package edu.ifpb.dac.avaliacao2.dac.questao1;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,7 @@ import javax.persistence.ManyToMany;
  * @author Emanuel Batista da Silva Filho
  */
 @Entity
-public class Filme {
+public class Filme implements Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
