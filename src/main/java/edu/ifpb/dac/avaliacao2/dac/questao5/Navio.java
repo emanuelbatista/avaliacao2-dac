@@ -29,5 +29,47 @@ public class Navio implements Serializable{
     
     @ManyToOne
     private Comandante comandante;
+
+    public long getCodNavio() {
+        return codNavio;
+    }
+
+    public void setCodNavio(long codNavio) {
+        this.codNavio = codNavio;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public float getCarga() {
+        return carga;
+    }
+
+    public void setCarga(float carga) {
+        this.carga = carga;
+    }
+
+    public String getPaisFabricacao() {
+        return paisFabricacao;
+    }
+
+    public void setPaisFabricacao(String paisFabricacao) {
+        this.paisFabricacao = paisFabricacao;
+    }
+
+    public Comandante getComandante() {
+        return comandante;
+    }
+
+    public void setComandante(Comandante comandante) {
+        this.comandante = comandante;
+    }
+    
+    
     
 }

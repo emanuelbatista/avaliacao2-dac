@@ -24,5 +24,30 @@ public class Produto implements Serializable{
     
     private String categoria;
     private String nome;
+
+    public long getCodProduto() {
+        return codProduto;
+    }
+
+    public void setCodProduto(long codProduto) {
+        this.codProduto = codProduto;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
     
 }

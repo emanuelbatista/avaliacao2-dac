@@ -24,6 +24,30 @@ public class Carga implements Serializable{
     
     private String origem;
     private String destino;
+
+    public long getCodCarga() {
+        return codCarga;
+    }
+
+    public void setCodCarga(long codCarga) {
+        this.codCarga = codCarga;
+    }
+
+    public String getOrigem() {
+        return origem;
+    }
+
+    public void setOrigem(String origem) {
+        this.origem = origem;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
     
     
 }
