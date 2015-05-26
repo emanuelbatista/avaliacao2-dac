@@ -6,10 +6,13 @@
 package edu.ifpb.dac.avaliacao2.dac.questao5;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -24,6 +27,18 @@ public class Comandante implements Serializable{
     
     private String nome;
     private String pais;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Navio> navios;
+
+    public List<Navio> getNavios() {
+        return navios;
+    }
+
+    public void setNavios(List<Navio> navios) {
+        this.navios = navios;
+    }
+    
 
     public long getIdComandante() {
         return idComandante;

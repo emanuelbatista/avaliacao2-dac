@@ -6,11 +6,13 @@
 package edu.ifpb.dac.avaliacao2.dac.questao5;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -23,12 +25,19 @@ public class Navio implements Serializable{
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long codNavio;
     
+    @OneToOne(cascade = CascadeType.ALL)
+    private Transporte transporte;
     private String nome;
-    private float carga;
-    private String paisFabricacao;
-    
-    @ManyToOne
-    private Comandante comandante;
+    private float capacidade;
+    private String pais;
+
+    public Transporte getTransporte() {
+        return transporte;
+    }
+
+    public void setTransporte(Transporte transporte) {
+        this.transporte = transporte;
+    }
 
     public long getCodNavio() {
         return codNavio;
@@ -46,29 +55,22 @@ public class Navio implements Serializable{
         this.nome = nome;
     }
 
-    public float getCarga() {
-        return carga;
+    public float getCapacidade() {
+        return capacidade;
     }
 
-    public void setCarga(float carga) {
-        this.carga = carga;
+    public void setCapacidade(float capacidade) {
+        this.capacidade = capacidade;
     }
 
     public String getPaisFabricacao() {
-        return paisFabricacao;
+        return pais;
     }
 
     public void setPaisFabricacao(String paisFabricacao) {
-        this.paisFabricacao = paisFabricacao;
+        this.pais = paisFabricacao;
     }
 
-    public Comandante getComandante() {
-        return comandante;
-    }
-
-    public void setComandante(Comandante comandante) {
-        this.comandante = comandante;
-    }
     
     
     

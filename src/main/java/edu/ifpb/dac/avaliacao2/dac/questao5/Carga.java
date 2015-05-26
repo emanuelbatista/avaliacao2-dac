@@ -1,15 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.ifpb.dac.avaliacao2.dac.questao5;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,8 +20,18 @@ public class Carga implements Serializable{
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long codCarga;
     
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Produto> produtos;
     private String origem;
     private String destino;
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
 
     public long getCodCarga() {
         return codCarga;
